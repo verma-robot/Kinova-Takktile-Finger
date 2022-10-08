@@ -1,0 +1,19 @@
+<launch>
+   
+   <arg name="port_name" default="/dev/ttyUSB0" />
+   
+   <arg name="gripper_type" default="3" />
+   <arg name="gripper_id" default="1"/>
+
+   <arg name="ns" default="kinova_takktile_gripper" />
+
+   <node pkg="kinova_takktile_gripper_driver" type="kinova_takktile_gripper_driver_node" name="kinova_takktile_gripper_driver_node" output="screen" required="true" cwd="node" >
+
+      <param name="port_name" value="$(arg port_name)" />      
+      <param name="gripper_type" value="$(arg gripper_type)" />      
+      <param name="gripper_id" value="$(arg gripper_id)" />   
+      <param name="ns" value="$(arg ns)" />
+   
+   </node>      
+	
+</launch>
